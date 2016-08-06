@@ -2,11 +2,13 @@ import {
     CELL_CLICK
 } from './action.types.js'
 
-export default (pos) => {
-    dispatch({
-        type: CELL_CLICK,
-        payload: {
-            pos
-        }
-    })
+export const cellClick = (pos) => {
+    return dispatch => {
+        dispatch({
+            type: CELL_CLICK,
+            payload: {
+                pos
+            }
+        });
+    }
 }

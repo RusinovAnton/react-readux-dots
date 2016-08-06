@@ -1,5 +1,5 @@
 import Cell from './Cell.component'
-import {bindActionCreator} from 'redux'
+import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 import {
     cellClick
@@ -8,8 +8,6 @@ import {
 export default connect(
     null,
     {
-        onClick: dispatch => {
-            bindActionCreator(cellClick, dispatch)
-        }
+        onClick: cellClick
     }
 )(Cell)
