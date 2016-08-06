@@ -2,21 +2,45 @@ import React from 'react'
 import {uniqueId} from 'lodash'
 import Cell from '../grid/Cell.container'
 
-export default grid => {
-    return grid.map(row => {
+const renderCell = cell => {
+    if (!cell) {
         return (
-            <div key={uniqueId()} className="row">
-                {row.map(cell => {
-                    if (!cell) {
-                        return (
-                            <div key={uniqueId()} className="cell cell--empty"/>
-                        )
-                    }
-                    return (
-                        <Cell key={uniqueId()} {...cell}/>
-                    );
-                })}
-            </div>
+            <div key={uniqueId()} className="cell cell--empty"/>
         )
-    });
+    }
+    return (
+        <Cell key={uniqueId()} {...cell}/>
+    );
+}
+
+const getRowCells = (grid, y) => {
+    let rowMap = [];
+    let x;
+    for (x=0; x < grid.length; x++) {
+        rowMap.push(renderCell(grid[x][y]));
+    }
+    return rowMap;
+}
+
+// Turn grid for -90deg
+export default grid => {
+
+    let x,y;
+    let gridMap = [];
+
+    for (y = grid[0].length - 1; y >= 0 ; y--) {
+        gridMap.push(
+            (
+                <div key={uniqueId()} className="row">
+                     {
+                        getRowCells(grid, y)
+                    }
+                </div>
+            )
+        );
+    }
+    console.log(grid);
+    console.log(gridMap);
+
+    return gridMap;
 }

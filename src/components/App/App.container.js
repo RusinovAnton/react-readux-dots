@@ -7,7 +7,7 @@ export default connect(
 	({grid}) => {
 		return {
             game: new Game(
-                {x: 5, y:5},
+                {x: 5, y:10},
                 ['#fc0', '#0cf', '#f0c', '#c0f']
             )
 		}
