@@ -1,10 +1,9 @@
 import React from 'react'
 import {uniqueId} from 'lodash'
 
-export default ({pos, body, onCellClick}) => {
-    const onClick = () => onCellClick(pos)
+export default function Cell({pos, body, onCellClick}) {
     return (
-        <div className="cell" onClick={onClick}>
+        <div className="cell" onClick={() => onCellClick(pos)}>
             {
                 body.map(cellItem => {
                     return (

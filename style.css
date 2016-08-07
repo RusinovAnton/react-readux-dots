@@ -1,6 +1,10 @@
+html,
+body {
+    height: 100%;
+}
 
 body {
-    background-color: #effcfc;
+    background: linear-gradient(#effcfc,#fff);
     text-align: center;
 }
 .grid {

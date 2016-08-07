@@ -1,17 +1,17 @@
 import {connect} from 'react-redux'
 import App from './App.component'
-import Game from '../../entity/Game'
+
+import {setGrid} from '../../actions'
 
 export default connect(
 	//mapStateToProps
-	({grid}) => {
+	({game}) => {
 		return {
-            game: new Game(
-                {
-                    size: {x: 5, y:5},
-                    scheme: ['#fc0', '#0cf', '#f0c', '#c0f']
-                }
-            )
+            game
 		}
-	}
+	},
+    // mapDispatchToProps
+    {
+        setGrid
+    }
 )(App);

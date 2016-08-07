@@ -1,1 +1,1 @@
-export * from './grid.reducer';
+export * from './game.reducer';

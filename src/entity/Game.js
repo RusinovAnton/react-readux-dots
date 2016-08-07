@@ -23,6 +23,14 @@ class Game {
         this._grid = new Grid(matrix);
     }
 
+    setCell(pos, cell) {
+        this._grid.cell = {
+            x: pos.x,
+            y: pos.y,
+            body: cell
+        }
+    }
+
     initRandomGrid() {
 
         let gridBody = [];

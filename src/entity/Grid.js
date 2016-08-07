@@ -8,7 +8,11 @@ class Grid {
     }
 
     set cell({x,y,body}) {
-        this.body[x][y] = body;
+        this._body[x][y]._body = body;
+    }
+
+    appendCell({x,y,body}) {
+        this._body[x][y]._body.push(body);
     }
 
     get body() {
