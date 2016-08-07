@@ -9,7 +9,7 @@ const renderCell = cell => {
         )
     }
     return (
-        <Cell key={uniqueId()} {...cell}/>
+        <Cell key={uniqueId()} pos={cell.pos} body={cell.body}/>
     );
 }
 
@@ -39,8 +39,6 @@ export default grid => {
             )
         );
     }
-    console.log(grid);
-    console.log(gridMap);
 
     return gridMap;
 }

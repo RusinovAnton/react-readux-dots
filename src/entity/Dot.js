@@ -1,6 +1,6 @@
-import CellBody from './CellBody'
+import CellItem from './CellItem'
 
-class Dot extends CellBody {
+class Dot extends CellItem {
 	constructor(color) {
         super({
             type: 'TYPE_BUBBLE',

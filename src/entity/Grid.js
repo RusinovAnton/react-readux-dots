@@ -1,6 +1,9 @@
 class Grid {
     constructor(body = []) {
         this._size = body.length;
+
+        // TODO: add validation for grid body
+        // throw error if there is Grid is coming as body argument
         this._body = body;
     }
 

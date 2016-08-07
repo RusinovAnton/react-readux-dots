@@ -2,7 +2,7 @@ import {
     TYPE_BUBBLE
 } from './cellBody.types.js'
 
-class CellBody {
+class CellItem {
     constructor({type,name,shape,interactive}) {
         this.name = name;
         this.type = type || TYPE_BUBBLE;
@@ -14,4 +14,4 @@ class CellBody {
     }
 }
 
-export default CellBody
+export default CellItem
