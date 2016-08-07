@@ -25,7 +25,7 @@ const getRowCells = (grid, y) => {
 // Turn grid for -90deg
 export default grid => {
 
-    let x,y;
+    let y;
     let gridMap = [];
 
     for (y = grid[0].length - 1; y >= 0 ; y--) {
